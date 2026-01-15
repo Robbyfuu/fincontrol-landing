@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Pricing from '../components/Pricing.astro';
+import { IconBrandWhatsapp, IconMail, IconBrandLinkedin } from '@tabler/icons-react';
+
+const currentYear = new Date().getFullYear();
+---
+
+<Layout title="FinControl - Automatiza tus gastos con WhatsApp">
+  <main>
+    <Hero />
+    <Features />
+    
+    <!-- How it works section -->
+    <section class="py-20 bg-slate-50 border-y border-slate-200">
+      <div class="container mx-auto px-4 text-center max-w-4xl">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-16">Así de simple</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="relative">
+            <div class="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center text-2xl font-bold text-blue-600 mx-auto mb-6 z-10 relative">1</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Envía</h3>
+            <p class="text-slate-600">Saca una foto a tu boleta o reenvía el documento por WhatsApp.</p>
+            
+            <!-- Connector line -->
+            <div class="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-slate-200 -z-0"></div>
+          </div>
+          
+          <div class="relative">
+            <div class="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center text-2xl font-bold text-blue-600 mx-auto mb-6 z-10 relative">2</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Procesa</h3>
+            <p class="text-slate-600">Nuestra IA extrae la información y categoriza el gasto en segundos.</p>
+             <!-- Connector line -->
+             <div class="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-slate-200 -z-0"></div>
+          </div>
+          
+          <div class="relative">
+            <div class="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center text-2xl font-bold text-blue-600 mx-auto mb-6 z-10 relative">3</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Listo</h3>
+            <p class="text-slate-600">Confirma si es necesario y el gasto queda registrado en tu dashboard.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Pricing />
+    
+    <!-- Final CTA -->
+    <section class="py-20 bg-slate-900 text-white overflow-hidden relative">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900 via-slate-900 to-slate-900 opacity-50"></div>
+      
+      <div class="container mx-auto px-4 text-center relative z-10">
+        <h2 class="text-3xl lg:text-5xl font-bold mb-8">¿Listo para retomar el control?</h2>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10">
+          Únete a cientos de usuarios que ya ahorran horas cada mes automatizando sus rendiciones de gastos.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a 
+            href="https://wa.me/56912345678" 
+            target="_blank"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-bold text-slate-900 bg-white rounded-full hover:bg-slate-100 transition-colors shadow-xl w-full sm:w-auto"
+          >
+            <IconBrandWhatsapp className="w-6 h-6 text-green-600" />
+            Comenzar Prueba Gratis
+          </a>
+        </div>
+        <p class="text-sm text-slate-400 mt-6">No requiere tarjeta de crédito para empezar</p>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="bg-white border-t border-slate-200 pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div class="col-span-2">
+          <div class="flex items-center gap-2 font-bold text-2xl text-slate-900 mb-4">
+            <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white">F</div>
+            FinControl
+          </div>
+          <p class="text-slate-500 max-w-xs">
+            La plataforma de gestión de gastos más simple y potente para WhatsApp.
+          </p>
+        </div>
+        
+        <div>
+          <h4 class="font-bold text-slate-900 mb-4">Producto</h4>
+          <ul class="space-y-3 text-slate-600">
+            <li><a href="#features" class="hover:text-blue-600">Características</a></li>
+            <li><a href="#pricing" class="hover:text-blue-600">Precios</a></li>
+            <li><a href="#" class="hover:text-blue-600">Para Empresas</a></li>
+            <li><a href="#" class="hover:text-blue-600">Seguridad</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-bold text-slate-900 mb-4">Legal</h4>
+          <ul class="space-y-3 text-slate-600">
+            <li><a href="#" class="hover:text-blue-600">Términos de Uso</a></li>
+            <li><a href="#" class="hover:text-blue-600">Privacidad</a></li>
+            <li><a href="#" class="hover:text-blue-600">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-slate-500 text-sm">© {currentYear} FinControl. Todos los derechos reservados.</p>
+        <div class="flex items-center gap-4">
+           <a href="#" class="text-slate-400 hover:text-blue-600"><IconMail className="w-5 h-5" /></a>
+           <a href="#" class="text-slate-400 hover:text-blue-600"><IconBrandLinkedin className="w-5 h-5" /></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>

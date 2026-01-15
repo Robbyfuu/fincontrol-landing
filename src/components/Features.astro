@@ -1,0 +1,102 @@
+---
+import { IconCamera, IconRobot, IconChartBar, IconBuildingSkyscraper, IconCreditCard, IconUsers, IconMessageChatbot } from '@tabler/icons-react';
+
+const personalFeatures = [
+  {
+    icon: IconCamera,
+    title: "Foto y Listo",
+    description: "Toma una foto a tu boleta o reenvía el PDF. No más digitación manual."
+  },
+  {
+    icon: IconMessageChatbot,
+    title: "WhatsApp o Web Chat",
+    description: "Tú eliges: usa nuestra plataforma desde WhatsApp o con nuestro chat bot integrado."
+  },
+  {
+    icon: IconRobot,
+    title: "IA Avanzada",
+    description: "Nuestra IA extrae fecha, monto, comercio y categoría automáticamente."
+  },
+  {
+    icon: IconChartBar,
+    title: "Respaldo Digital",
+    description: "Tus boletas quedan guardadas y organizadas. Ideal para garantías o cambios."
+  }
+];
+
+const businessFeatures = [
+  {
+    icon: IconUsers,
+    title: "Multi-usuario",
+    description: "Gestiona los gastos de todos tus empleados en un solo lugar."
+  },
+  {
+    icon: IconCreditCard,
+    title: "Control Total",
+    description: "Asigna límites de gasto y aprueba rendiciones con un clic."
+  },
+  {
+    icon: IconBuildingSkyscraper,
+    title: "Escalable",
+    description: "Desde pequeñas startups hasta grandes empresas. Crecemos contigo."
+  }
+];
+---
+
+<section id="features" class="py-20 lg:py-32 bg-slate-50">
+  <div class="container mx-auto px-4 max-w-6xl">
+    
+    <div class="text-center max-w-2xl mx-auto mb-20">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Todo lo que necesitas para controlar tus gastos</h2>
+      <p class="text-lg text-slate-600">Una plataforma, dos modos de uso. Elige la que mejor se adapte a ti.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-20">
+      <!-- Personal Column -->
+      <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 relative overflow-hidden group hover:border-blue-200 transition-colors">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+        <div class="mb-8">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 font-semibold text-sm mb-4">Para Personas</span>
+          <h3 class="text-2xl font-bold text-slate-900">Organiza tus finanzas personales</h3>
+        </div>
+        
+        <div class="space-y-8">
+          {personalFeatures.map(item => (
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <item.icon className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900 mb-1">{item.title}</h4>
+                <p class="text-slate-600 text-sm leading-relaxed">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Business Column -->
+      <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 relative overflow-hidden group hover:border-purple-200 transition-colors">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-purple-600"></div>
+        <div class="mb-8">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-purple-50 text-purple-700 font-semibold text-sm mb-4">Para Empresas</span>
+          <h3 class="text-2xl font-bold text-slate-900">Gestión de rendiciones simplificada</h3>
+        </div>
+        
+        <div class="space-y-8">
+          {businessFeatures.map(item => (
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-600 shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <item.icon className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900 mb-1">{item.title}</h4>
+                <p class="text-slate-600 text-sm leading-relaxed">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

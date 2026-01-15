@@ -1,0 +1,104 @@
+---
+import { IconCheck } from '@tabler/icons-react';
+
+const plans = [
+  {
+    name: "Personal",
+    price: "4.99",
+    period: "/mes",
+    description: "Para organizar tus finanzas diarias.",
+    features: [
+      "Usuarios ilimitados (tú)",
+      "Procesamiento ilimitado con IA",
+      "Dashboard personal",
+      "Exportación a Excel",
+      "Soporte por email"
+    ],
+    cta: "Prueba 1 mes gratis",
+    highlight: false,
+    color: "blue"
+  },
+  {
+    name: "Starter",
+    price: "29",
+    period: "/mes",
+    description: "Perfecto para equipos pequeños.",
+    features: [
+      "Hasta 3 empleados",
+      "Todo lo de Personal",
+      "Admin Panel",
+      "Aprobación de gastos",
+      "Soporte prioritario"
+    ],
+    cta: "Comenzar ahora",
+    highlight: true,
+    color: "purple"
+  },
+  {
+    name: "Business",
+    price: "79",
+    period: "/mes",
+    description: "Para empresas en crecimiento.",
+    features: [
+      "Hasta 10 empleados",
+      "Todo lo de Starter",
+      "Múltiples administradores",
+      "Reportes avanzados",
+      "API Access"
+    ],
+    cta: "Comenzar ahora",
+    highlight: false,
+    color: "slate"
+  }
+];
+---
+
+<section id="pricing" class="py-20 lg:py-32 bg-white relative">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Planes simples y transparentes</h2>
+      <p class="text-lg text-slate-600">Comienza gratis con nuestro plan personal. Cancela cuando quieras.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {plans.map(plan => (
+        <div class={`relative rounded-3xl p-8 border ${plan.highlight ? 'border-purple-200 shadow-2xl shadow-purple-900/10 scale-105 z-10 bg-white' : 'border-slate-100 shadow-lg bg-slate-50/50'}`}>
+          {plan.highlight && (
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+              Más Popular
+            </div>
+          )}
+          
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold text-slate-900 mb-2">{plan.name}</h3>
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-bold text-slate-900">${plan.price}</span>
+              <span class="text-slate-500">{plan.period}</span>
+            </div>
+            <p class="text-slate-500 mt-4 text-sm">{plan.description}</p>
+          </div>
+
+          <a 
+            href="https://wa.me/56912345678" 
+            class={`block w-full py-3 px-4 rounded-xl text-center font-medium transition-colors mb-8 ${
+              plan.highlight 
+                ? 'bg-purple-600 text-white hover:bg-purple-700 shadow-lg shadow-purple-600/20' 
+                : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
+            }`}
+          >
+            {plan.cta}
+          </a>
+
+          <ul class="space-y-4">
+            {plan.features.map(feature => (
+              <li class="flex items-start gap-3 text-sm text-slate-600">
+                <IconCheck className={`w-5 h-5 shrink-0 ${plan.highlight ? 'text-purple-600' : 'text-blue-500'}`} />
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
