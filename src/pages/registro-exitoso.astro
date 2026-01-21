@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { IconCheck } from '@tabler/icons-react';
+---
+
+<Layout title="Registro Exitoso - FinControl">
+  <main class="min-h-screen bg-gradient-to-br from-slate-50 to-green-50 py-12 px-4 flex items-center">
+    <div class="container mx-auto max-w-lg">
+      <div class="bg-white rounded-2xl shadow-xl p-8 text-center">
+        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <IconCheck className="w-10 h-10 text-green-600" />
+        </div>
+        
+        <h1 class="text-3xl font-bold text-slate-900 mb-4">
+          ¡Registro Exitoso!
+        </h1>
+        
+        <p class="text-lg text-slate-600 mb-6">
+          Tu pago ha sido procesado correctamente.
+        </p>
+        
+        <div class="bg-blue-50 rounded-xl p-6 mb-6 text-left">
+          <h2 class="font-semibold text-slate-900 mb-3 text-lg">🚀 Próximos pasos</h2>
+          <p class="text-slate-700 mb-4">
+            Te contactaremos por <strong>WhatsApp</strong> con los detalles de acceso y los pasos para comenzar.
+          </p>
+          <div class="text-sm text-slate-500 border-t border-blue-100 pt-4">
+            <p>¿No recibiste el mensaje?</p>
+            <p>Contáctanos a <a href="mailto:contacto@fincontrol.cl" class="text-blue-600 font-medium hover:underline">contacto@fincontrol.cl</a></p>
+          </div>
+        </div>
+        
+        <a 
+          href="/"
+          class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 font-medium"
+        >
+          Volver al inicio
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

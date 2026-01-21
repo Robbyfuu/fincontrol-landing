@@ -4,7 +4,7 @@ import { IconCheck } from '@tabler/icons-react';
 const plans = [
   {
     name: "Personal",
-    price: "4.99",
+    price: "3.990",
     period: "/mes",
     description: "Para organizar tus finanzas diarias.",
     features: [
@@ -16,11 +16,12 @@ const plans = [
     ],
     cta: "Prueba 1 mes gratis",
     highlight: false,
-    color: "blue"
+    color: "blue",
+    planType: "PERSONAL" // Personal plan type
   },
   {
     name: "Starter",
-    price: "29",
+    price: "14.990",
     period: "/mes",
     description: "Perfecto para equipos pequeños.",
     features: [
@@ -32,11 +33,12 @@ const plans = [
     ],
     cta: "Comenzar ahora",
     highlight: true,
-    color: "purple"
+    color: "purple",
+    planType: "STARTER"
   },
   {
     name: "Business",
-    price: "79",
+    price: "49.990",
     period: "/mes",
     description: "Para empresas en crecimiento.",
     features: [
@@ -48,7 +50,8 @@ const plans = [
     ],
     cta: "Comenzar ahora",
     highlight: false,
-    color: "slate"
+    color: "slate",
+    planType: "BUSINESS"
   }
 ];
 ---
@@ -79,7 +82,7 @@ const plans = [
           </div>
 
           <a 
-            href="https://wa.me/56912345678" 
+            href={plan.planType === "PERSONAL" ? `/registro-personal` : `/registro-empresa?plan=${plan.planType}`}
             class={`block w-full py-3 px-4 rounded-xl text-center font-medium transition-colors mb-8 ${
               plan.highlight 
                 ? 'bg-purple-600 text-white hover:bg-purple-700 shadow-lg shadow-purple-600/20' 

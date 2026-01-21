@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CompanySignupForm from '../components/CompanySignupForm';
+---
+
+<Layout title="Registrar Empresa - FinControl">
+  <main class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-12 px-4">
+    <div class="container mx-auto max-w-2xl">
+      <div class="text-center mb-8">
+        <a href="/" class="inline-flex items-center gap-2 text-slate-600 hover:text-blue-600 mb-6">
+          ← Volver al inicio
+        </a>
+        <h1 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+          Registra tu empresa
+        </h1>
+        <p class="text-lg text-slate-600">
+          Completa tus datos y comienza a gestionar los gastos de tu equipo
+        </p>
+      </div>
+      
+      <div class="bg-white rounded-2xl shadow-xl p-8">
+        <CompanySignupForm client:load />
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script is:inline src="https://sdk.mercadopago.com/js/v2"></script>
