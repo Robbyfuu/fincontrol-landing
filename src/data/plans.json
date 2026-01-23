@@ -1,0 +1,73 @@
+{
+  "personal": {
+    "type": "PERSONAL",
+    "name": "Personal",
+    "price": 3990,
+    "priceFormatted": "3.990",
+    "maxEmployees": 0,
+    "features": [
+      "Control de gastos personales",
+      "Registro via WhatsApp",
+      "Categorización automática con IA",
+      "Dashboard web completo",
+      "Reportes mensuales"
+    ]
+  },
+  "starter": {
+    "type": "STARTER",
+    "name": "Starter",
+    "price": 14990,
+    "priceFormatted": "14.990",
+    "maxEmployees": 3,
+    "popular": true,
+    "features": [
+      "Todo lo del plan Personal",
+      "Hasta 3 empleados",
+      "Panel de administración",
+      "Aprobación de gastos",
+      "Reportes por empleado"
+    ]
+  },
+  "business": {
+    "type": "BUSINESS",
+    "name": "Business",
+    "price": 49990,
+    "priceFormatted": "49.990",
+    "maxEmployees": 10,
+    "features": [
+      "Todo lo del plan Starter",
+      "Hasta 10 empleados",
+      "Integraciones avanzadas",
+      "Soporte prioritario",
+      "API access"
+    ]
+  },
+  "enterprise": {
+    "type": "ENTERPRISE",
+    "name": "Enterprise",
+    "price": 99990,
+    "priceFormatted": "99.990",
+    "maxEmployees": 50,
+    "features": [
+      "Todo lo del plan Business",
+      "Hasta 50 empleados",
+      "Gestor de cuenta dedicado",
+      "Personalización avanzada",
+      "SLA garantizado"
+    ]
+  },
+  "unlimited": {
+    "type": "UNLIMITED",
+    "name": "Unlimited",
+    "price": 0,
+    "priceFormatted": "Contactar",
+    "maxEmployees": 9999,
+    "features": [
+      "Empleados ilimitados",
+      "Todas las funcionalidades",
+      "Soporte 24/7",
+      "Onboarding personalizado",
+      "Precio negociable"
+    ]
+  }
+}

@@ -1,57 +1,40 @@
 ---
 import { IconCheck } from '@tabler/icons-react';
+import plansData from '../data/plans.json';
 
 const plans = [
   {
-    name: "Personal",
-    price: "3.990",
+    name: plansData.personal.name,
+    price: plansData.personal.priceFormatted,
     period: "/mes",
     description: "Para organizar tus finanzas diarias.",
-    features: [
-      "Usuarios ilimitados (tú)",
-      "Procesamiento ilimitado con IA",
-      "Dashboard personal",
-      "Exportación a Excel",
-      "Soporte por email"
-    ],
+    features: plansData.personal.features,
     cta: "Prueba 1 mes gratis",
     highlight: false,
     color: "blue",
-    planType: "PERSONAL" // Personal plan type
+    planType: plansData.personal.type
   },
   {
-    name: "Starter",
-    price: "14.990",
+    name: plansData.starter.name,
+    price: plansData.starter.priceFormatted,
     period: "/mes",
     description: "Perfecto para equipos pequeños.",
-    features: [
-      "Hasta 3 empleados",
-      "Todo lo de Personal",
-      "Admin Panel",
-      "Aprobación de gastos",
-      "Soporte prioritario"
-    ],
+    features: plansData.starter.features,
     cta: "Comenzar ahora",
     highlight: true,
     color: "purple",
-    planType: "STARTER"
+    planType: plansData.starter.type
   },
   {
-    name: "Business",
-    price: "49.990",
+    name: plansData.business.name,
+    price: plansData.business.priceFormatted,
     period: "/mes",
     description: "Para empresas en crecimiento.",
-    features: [
-      "Hasta 10 empleados",
-      "Todo lo de Starter",
-      "Múltiples administradores",
-      "Reportes avanzados",
-      "API Access"
-    ],
+    features: plansData.business.features,
     cta: "Comenzar ahora",
     highlight: false,
     color: "slate",
-    planType: "BUSINESS"
+    planType: plansData.business.type
   }
 ];
 ---
