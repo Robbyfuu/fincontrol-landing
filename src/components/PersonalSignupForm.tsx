@@ -61,8 +61,8 @@ export default function PersonalSignupForm() {
     }
 
     try {
-      // Create preference and redirect to MercadoPago
-      const res = await fetch(`${API_URL}/api/payments/personal-preference`, {
+      // Create subscription and redirect to MercadoPago
+      const res = await fetch(`${API_URL}/api/payments/subscription/personal`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
