@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { IconMail, IconTrash, IconShieldLock, IconHelpCircle } from '@tabler/icons-react';
+
+// App Store requires a support URL that opens WITHOUT an account. fincontrol.cl
+// is the web app and routes every unknown path to /login, so this page lives on
+// the landing instead. The account-deletion section is not optional: Apple
+// checks that an app offering sign-up also documents how to delete the account.
+const SUPPORT_EMAIL = 'soporte@fincontrol.cl';
+
+const faqs = [
+  {
+    q: 'No me llega el código para entrar',
+    a: 'El código llega por SMS al número que registraste y puede tardar hasta un minuto. Si no llega, revisa que el número esté completo y con el código de país. También puedes entrar con tu cuenta de Google o de Apple.',
+  },
+  {
+    q: 'Subí mi cartola y no aparecieron los movimientos',
+    a: 'Si tu banco no está entre los formatos soportados, la app te lo dice explícitamente en vez de mostrarte cero movimientos. Desde ese mismo aviso puedes enviarnos el archivo para que agreguemos ese formato: es opcional y solo ocurre si tú lo aceptas.',
+  },
+  {
+    q: 'La captura automática con la tarjeta no registra mis compras',
+    a: 'Esa función necesita una automatización que se crea una sola vez dentro de la app Atajos de iOS, y iOS no permite que una app la cree por ti. La app te guía paso a paso; el punto donde suele fallar es no conectar los tres campos de la acción. Si te trabas, escríbenos.',
+  },
+  {
+    q: '¿Guardan el número de mi tarjeta?',
+    a: 'No. No existe dónde guardarlo y la app nunca lo pide. Si registras una tarjeta, se guarda el nombre que tú le pones y, si tú los escribes, los últimos cuatro dígitos.',
+  },
+];
+---
+
+<Layout
+  title="Soporte"
+  description="Ayuda, contacto y eliminación de cuenta de FinControl."
+>
+  <main class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 pt-32 pb-20 px-4">
+    <div class="container mx-auto max-w-2xl">
+      <h1 class="text-4xl font-bold text-slate-900 mb-3">Soporte</h1>
+      <p class="text-lg text-slate-600 mb-10">
+        FinControl ordena tus gastos: los anotas, importas tu cartola o los
+        capturas al pagar, y la app te muestra cómo vas contra tu tope del mes.
+      </p>
+
+      <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-6">
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 shrink-0 bg-blue-100 rounded-xl flex items-center justify-center">
+            <IconMail className="w-6 h-6 text-blue-600" />
+          </div>
+          <div>
+            <h2 class="font-semibold text-slate-900 text-lg mb-1">Escríbenos</h2>
+            <p class="text-slate-600 mb-2">
+              Respondemos dentro de los siguientes días hábiles. Cuéntanos qué
+              intentabas hacer y desde qué dispositivo.
+            </p>
+            <a
+              href={`mailto:${SUPPORT_EMAIL}`}
+              class="text-blue-600 font-medium hover:underline break-all"
+            >
+              {SUPPORT_EMAIL}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-6">
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 shrink-0 bg-red-100 rounded-xl flex items-center justify-center">
+            <IconTrash className="w-6 h-6 text-red-600" />
+          </div>
+          <div>
+            <h2 class="font-semibold text-slate-900 text-lg mb-1">
+              Eliminar tu cuenta
+            </h2>
+            <p class="text-slate-600">
+              Desde la app: abre <strong>Ajustes</strong>, toca la tarjeta de tu
+              perfil arriba y ahí encuentras <strong>Eliminar cuenta</strong>. Te
+              pedirá confirmar tu identidad. Tu perfil se anonimiza y tus datos
+              personales dejan de estar asociados a ti.
+              Si no puedes entrar a la app, escríbenos a
+              <a href={`mailto:${SUPPORT_EMAIL}`} class="text-blue-600 font-medium hover:underline">{SUPPORT_EMAIL}</a>
+              desde el correo de tu cuenta y lo hacemos nosotros.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-10">
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 shrink-0 bg-slate-100 rounded-xl flex items-center justify-center">
+            <IconHelpCircle className="w-6 h-6 text-slate-600" />
+          </div>
+          <div class="w-full">
+            <h2 class="font-semibold text-slate-900 text-lg mb-4">
+              Preguntas frecuentes
+            </h2>
+            <dl class="divide-y divide-slate-100">
+              {faqs.map((faq) => (
+                <div class="py-4 first:pt-0 last:pb-0">
+                  <dt class="font-medium text-slate-900 mb-1">{faq.q}</dt>
+                  <dd class="text-slate-600">{faq.a}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex flex-col sm:flex-row gap-3">
+        <a
+          href="https://api.fincontrol.cl/legal/privacidad"
+          class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 bg-white border border-slate-200 rounded-xl text-slate-700 font-medium hover:border-blue-300 hover:text-blue-600 transition-colors"
+        >
+          <IconShieldLock className="w-5 h-5" />
+          Política de privacidad
+        </a>
+        <a
+          href="https://api.fincontrol.cl/legal/terminos"
+          class="flex-1 inline-flex items-center justify-center px-5 py-3 bg-white border border-slate-200 rounded-xl text-slate-700 font-medium hover:border-blue-300 hover:text-blue-600 transition-colors"
+        >
+          Términos de servicio
+        </a>
+      </section>
+    </div>
+  </main>
+</Layout>
